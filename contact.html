@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title> سُندسية ديزاين - تصميمات عمرية تجمع بين الأناقة والراحة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <!-- اللوجو -->
+                    <div class="logo-img">
+                        <img src="./images/logo.png" style="width: 56px;">
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-arabic">سندسیة دیزاین</div>
+                        <div class="logo-english">S U N D O S I A  D E S I G N</div>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <ul class="nav-links">
+                    <li><a href="./index.html">الرئيسية</a></li>
+                    <li><a href="./product_detials.html">المنتجات</a></li>
+                    <li><a href="#features">من نحن</a></li>
+                    <li><a href="./contact.html">تواصل معنا</a></li>
+                </ul>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- الصفحة الرئيسية -->
+ 
+
+    <!-- قسم التواصل -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">الموضوع</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">إرسال الرسالة</button>
+                </form>
+                <br>
+                 <h4 style="align-items:center;margin-right: 157px;color: #8b4513;">او من خلال مواقع التواصل الاجتماعي</h4><br>
+                 <div class="social-links" style="align-items:center;margin-right: 157px;">
+                       
+                        <a href="#" style="color: #8b4513;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #8b4513;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #8b4513;"><i class="fab fa-snapchat"></i></a>
+                        <a href="#" style="color: #8b4513;"><i class="fab fa-tiktok"></i></a>
+                    </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>سندسیة دیزاین</h3>
+                    <p>متجرك المفضل للأزياء العصرية والأنيقة التي تجمع بين الأصالة والحداثة</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-snapchat"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                         <li><a href="./index.html">الرئيسية</a></li>
+                        <li><a href="./product_detials.html">المنتجات</a></li>
+                        <li><a href="#features">من نحن</a></li>
+                        <li><a href="./contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>معلومات الاتصال</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> المفرق  , الاردن</li>
+                        <li><i class="fas fa-phone"></i> +111111111</li>
+                        <li><i class="fas fa-envelope"></i> info@sundosiadesign.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2023 سندسیة دیزاین</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // تفعيل القائمة المتنقلة
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // نظام التنقل بين الصفحات
+        document.querySelectorAll('.nav-link, .btn-details, .breadcrumb a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetPage = this.getAttribute('data-page');
+                
+                if (targetPage) {
+                    // إخفاء جميع الصفحات
+                    document.querySelectorAll('.product-page').forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // إظهار الصفحة المطلوبة
+                    document.getElementById(targetPage).style.display = 'block';
+                    
+                    // التمرير إلى أعلى الصفحة
+                    window.scrollTo(0, 0);
+                }
+            });
+        });
+
+        // تفعيل اختيار الصور المصغرة
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const mainImage = this.closest('.product-gallery').querySelector('.main-image');
+                mainImage.style.backgroundImage = this.style.backgroundImage;
+                
+                // إزالة النشاط من جميع الصور المصغرة
+                this.closest('.thumbnails').querySelectorAll('.thumbnail').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // إضافة النشاط للصورة المحددة
+                this.classList.add('active');
+            });
+        });
+
+        // تفعيل اختيار المقاسات
+        document.querySelectorAll('.size-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // إزالة التحديد من جميع الخيارات
+                this.closest('.sizes').querySelectorAll('.size-option').forEach(o => {
+                    o.classList.remove('selected');
+                });
+                
+                // إضافة التحديد للخيار المحدد
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>
