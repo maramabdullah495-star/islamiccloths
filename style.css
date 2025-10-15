@@ -1,4 +1,4 @@
- /* التنسيقات العامة */
+  /* التنسيقات العامة */
         * {
             margin: 0;
             padding: 0;
@@ -95,11 +95,12 @@
             display: none;
             cursor: pointer;
             font-size: 24px;
+            color: var(--primary-color);
         }
         
         /* قسم الهيرو */
         .hero {
-            height: 60vh;
+            height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./pic9.jpg');
             background-size: cover;
             background-position: center;
@@ -577,6 +578,7 @@
                 padding-top: 50px;
                 transition: right 0.3s;
                 box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
             }
             
             .nav-links.active {
@@ -602,8 +604,22 @@
                 max-width: 250px;
             }
             
+            /* تحسينات للهواتف - إظهار اللوجو واسم الموقع */
             .logo-text {
-                display: none;
+                display: flex !important;
+                flex-direction: column;
+            }
+            
+            .logo-arabic {
+                font-size: 16px;
+            }
+            
+            .logo-english {
+                font-size: 10px;
+            }
+            
+            .logo-img {
+                height: 40px;
             }
             
             .products-grid {
@@ -621,13 +637,13 @@
             .action-buttons {
                 flex-direction: column;
             }
+            
+            .thumbnails {
+                justify-content: center;
+            }
         }
         
         @media (max-width: 480px) {
-            .logo-img {
-                height: 40px;
-            }
-            
             .hero {
                 margin-top: 70px;
             }
@@ -636,8 +652,16 @@
                 height: 220px;
             }
             
-            .thumbnails {
-                justify-content: center;
+            .logo-container {
+                flex: 1;
+            }
+            
+            nav {
+                padding: 12px 0;
+            }
+            
+            header {
+                padding: 0 10px;
             }
         }
         
@@ -648,4 +672,27 @@
         
         #home-page {
             display: block;
+        }
+        
+        /* تحسينات إضافية للهواتف الصغيرة جداً */
+        @media (max-width: 360px) {
+            .logo-arabic {
+                font-size: 14px;
+            }
+            
+            .logo-english {
+                font-size: 9px;
+            }
+            
+            .logo-img {
+                height: 35px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
         }
